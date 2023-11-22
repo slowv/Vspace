@@ -128,6 +128,21 @@ spring:
             client-id: web_app
             client-secret: web_app
             scope: openid, profile, email, offline_access # last one for refresh tokens
+
+server:
+  servlet:
+    session:
+      cookie:
+        http-only: true
+
+springdoc:
+  show-actuator: true
+
+# Properties to be exposed on the /info management endpoint
+info:
+  # Comma separated list of profiles that will trigger the ribbon to show
+  display-ribbon-on-profiles: 'dev'
+
 vspace:
   clientApp:
     name: 'VSpaceApp'

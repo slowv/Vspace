@@ -1,6 +1,7 @@
 package com.vssoft.vspace;
 
 import com.vssoft.vspace.common.VspaceConstants;
+import com.vssoft.vspace.config.CRLFLogConverter;
 import com.vssoft.vspace.config.VSpaceProperties;
 import com.vssoft.vspace.common.utils.DefaultProfileUtil;
 import jakarta.annotation.PostConstruct;
@@ -85,6 +86,7 @@ public class VspaceApplication {
             log.warn("The host name could not be determined, using `localhost` as fallback");
         }
         log.info(
+                CRLFLogConverter.CRLF_SAFE_MARKER,
                 """
     
                 ----------------------------------------------------------

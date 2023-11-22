@@ -75,7 +75,8 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer(javax.cache.configuration.Configuration<Object, Object> jcacheConfiguration) {
         return cm -> {
-//            createCache(cm, com.slowv.glshop.repository.UserRepository.USERS_BY_LOGIN_CACHE, jcacheConfiguration);
+            createCache(cm, com.vssoft.vspace.domain.Product.class.getName(), jcacheConfiguration);
+//            createCache(cm, com.slowv.glshop.domain.Product.class.getName() + ".caseBoxes", jcacheConfiguration);
             // jhipster-needle-redis-add-entry
         };
     }

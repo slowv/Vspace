@@ -9,6 +9,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import java.io.Serial;
+
 @Getter
 @Setter
 @Entity
@@ -16,6 +18,9 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @Document(indexName = "products")
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Product extends AbstractAuditingEntity<String> {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(generator = "uuid", strategy = GenerationType.UUID)
